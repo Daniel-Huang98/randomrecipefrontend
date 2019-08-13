@@ -1,0 +1,8 @@
+.ingredients li {
+    font-size: 20px;
+    text-align: left;
+}
+
+.ingredients{
+    width: 400px;
+}
