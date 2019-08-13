@@ -48,7 +48,7 @@ class App extends React.Component{
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Show Me a Recipe</h1>
+          <h1>Random Recipe</h1>
           <Information name={this.state.recipe.name} category={this.state.recipe.category} region={this.state.recipe.region}/>
           <Image imageURL={this.state.recipe.imageURL} name={this.state.recipe.name}/>
           <Button onclick={this.getRecipe} text={"generate"}/>
