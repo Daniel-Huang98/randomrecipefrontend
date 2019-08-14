@@ -10,3 +10,19 @@
     max-width: 400px;
     border-radius: 5px;
 }
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .image{
+        height: 150px;
+        width: 150px;
+        margin: 5px;
+    }
+    
+    .image img{
+        max-height: 150px;
+        max-width: 150px;
+        border-radius: 5px;
+    }
+}
