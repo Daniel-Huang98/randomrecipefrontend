@@ -24,6 +24,18 @@ class App extends React.Component{
     this.getRecipe = this.getRecipe.bind(this)
   }
   getRecipe(){
+    this.setState(
+      {
+        recipe:{
+          name: "",
+          category: "",
+          region: "",
+          ingredients: [],
+          instructions:[],
+          imageURL:"",
+        }
+      }
+    );
     fetch("https://randomrecipeapi.herokuapp.com/randomrecipe",{method: 'GET', mode:'cors'}).then(data=>data.json()).then(json=>JSON.parse(json.data)).then(recipedata=>this.setState(
       {
         recipe:{
@@ -47,14 +59,13 @@ class App extends React.Component{
     
     return (
       <div className="App">
-        <header className="App-header">
           <h1>Random Recipe</h1>
           <Information name={this.state.recipe.name} category={this.state.recipe.category} region={this.state.recipe.region}/>
           <Image imageURL={this.state.recipe.imageURL} name={this.state.recipe.name}/>
           <Button onclick={this.getRecipe} text={"generate"}/>
           <Ingredients ingredients={this.state.recipe.ingredients}/>
           <Instructions instructions={this.state.recipe.instructions}/>
-        </header>
+          <footer>Built with React by Daniel Huang 2019</footer>
       </div>
     );
   }

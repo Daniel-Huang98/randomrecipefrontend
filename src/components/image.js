@@ -2,6 +2,7 @@ import React from 'react';
 import './style/image.css'
 
 
+
 class Image extends React.Component{
     render(){
         var imageURL = this.props.imageURL
@@ -15,7 +16,9 @@ class Image extends React.Component{
                 </div>
             );
         } else {
-            return(<div className="image"></div>)
+            return(<div className="image">
+                <img src={require('./resources/loading.gif')} alt={"loading gif"}/>
+            </div>)
         }
         
     }
